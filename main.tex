@@ -1,0 +1,114 @@
+
+%        نمونه پایان‌نامه آماده شده با استفاده از کلاس Razi-Thesis، نگارش 0.1
+% 	     امین روشنی، دانشگاه رازی، دانشکده علوم، گروه آمار
+%        این نسخه، بر اساس نسخه‌ 0.4 از کلاس Tabriz_Thesis آقای وحید دامن‌افشان آماده شده است. http://damanafshan.tk        
+%---------------------------------------------------------------------------------------------
+%        اگر قصد نوشتن پروژه کارشناسی را دارید، در خط زیر به جای msc، کلمه bsc و اگر قصد نوشتن پروژه دکترا
+%        را دارید، کلمه phd را قرار دهید. کلیه تنظیمات لازم، به طور خودکار، اعمال می‌شود.
+\documentclass[phd]{Razi-Thesis}
+
+% مشخصات دانشجو و پایان‌نامه، سوگندنامه، برگ اصالت و مالکیت اثر، تشکر و قدردانی را در فایلهای faTitle و enTitle وارد نمایید.
+
+%       فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین 
+%       و دیگر بسته‌ها و ... در این فایل قرار دارد و بهتر است که با نحوه استفاده از آنها آشنا شوید.
+\input{commands}
+
+\begin{document}
+% اگر میخواهید شماره صفحه‌ها در بخش های آغازین (فهرست و ...) به صورت حروف الفبای فارسی ظاهر شود کد زیر را فعال کنید.
+%\pagenumbering{harfi}
+\input{faTitle}
+\thispagestyle{empty}
+\emptypage\tableofcontents
+% فهرست علائم
+\input{chapters/acronyms}
+\newpage
+% فهرست جدول‌ها
+\listoftables  
+\newpage
+% فهرست شکل‌ها
+\listoffigures 
+\newpage
+% فهرست الگوریتم ها و اضافه کردن آن به فهرست مطالب
+%\addcontentsline{toc}{chapter}{\listalgorithmname}
+%\listofalgorithms \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%TODOدستورات مربوط به صفحات اول هر فصل
+{
+	\titleformat{\chapter}[display]
+	{\vspace{-3cm}\vfill\filcenter}
+	{{%
+			\thispagestyle{empty}
+			\vspace{-3cm}
+			\filcenter\fontsize{31pt}{31pt}\selectfont
+			{	\bfseries{\chaptername}}
+			\fontsize{31pt}{31pt}\selectfont\bfseries{\tartibi{chapter}}%
+		}%
+	}
+	{40pt}
+	{\fontsize{33pt}{33pt}\selectfont%
+	}[\vfill\clearpage]
+	{\bfseries\titlespacing*{\chapter}{0pt}{0pt}{0pt}}
+
+\pagestyle{fancy}
+% اگر شما فصل اول  خود را در فایلی به جز chapter1 همراه با این کلاس نوشته‌اید باید چندخط اول chapter1 را در فایل خود کپی کنید.
+\include{chapters/chapter1}			% فصل اول: مقدمه
+\include{chapters/chapter2}		% فصل دوم: آشنایی مقدماتی با لاتک
+% فصل سوم
+\include{chapters/chapter3}
+
+}
+% فهرست منابع
+\pagestyle{fancy}
+{
+\onehalfspacing
+\bibliographystyle{chicago-fa}%{acm-fa}{chicago-fa}%{plainnat-fa}%
+\bibliography{references/MyReferences}
+}
+
+\pagestyle{fancy}
+
+\appendix                           %فصلهای پس از این قسمت به عنوان ضمیمه خواهند آمد.
+% اگر شما پیوست اول  خود را در فایلی به جز appendix1 همراه با این کلاس نوشته‌اید باید چندخط اول appendix1 را در فایل خود کپی کنید.
+\include{chapters/appendix1}		% پیوست اول: مدیریت مراجع در لاتک
+\include{chapters/appendix2}
+\include{chapters/appendix3}
+
+
+%\baselineskip=.75cm
+%\onehalfspacing
+%\include{dicfa2en}
+%\include{dicen2fa}
+% برای آموزش نحوه خروجی گرفتن از واژه نامه‌ها به لینک زیر مراجعه کنید
+% https://tex.stackexchange.com/questions/448387/glossary-and-abbreviation-showing-problem-in-xepersianshown-in-blank-pages
+\newpage
+\markboth{واژه‌نامه فارسی به انگلیسی}{واژه‌نامه فارسی به انگلیسی}
+\printglossary[type=persian,style=mylistFa]
+\newpage
+\markboth{واژه‌نامه انگلیسی به فارسی}{واژه‌نامه انگلیسی به فارسی}
+\printglossary[type=english,style=mylistEn]
+
+% فهرست مقاله‌های برگرفته از پارسا. اگر مقاله ای ندارید سه خط زیر را غیر فعال کنید.
+\newpage
+\thispagestyle{empty}
+\include{chapters/papers}
+
+% بخش کارنامک برای دانش‌آموختگان مقطع دکتری اجباری و برای مقطع کارشناسی ارشد اختیاری است. در صورتی که دانشجوی مقطع دکتری نیستید و نمی‌خواهید کارنامک داشته باشید سه خط زیر را غیرفعال کنید.
+\newpage
+\thispagestyle{empty}
+\include{chapters/karnamak}
+% برگ تایید هیئت داوران به انگلیسی
+\davaranPageEN
+
+% دستوراتی برای نمایه
+
+%{\baselineskip=.6cm
+%	\phantomsection
+%	\addcontentsline{toc}{chapter}{نمایه}
+%	\printindex}
+
+%\include{enRights}
+\input{enTitle}
+\label{LastPage}
+
+\end{document}

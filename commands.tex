@@ -1,0 +1,295 @@
+% در این فایل، دستورها و تنظیمات مورد نیاز، آورده شده است.
+%-------------------------------------------------------------------------------------------------------------------
+
+% در ورژن جدید زی‌پرشین برای تایپ متن‌های ریاضی، این سه بسته، حتماً باید فراخوانی شود
+\usepackage{amsthm,amssymb,amsmath}
+% بسته‌ای برای تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
+\usepackage[top=25mm, bottom=25mm, left=22mm, right=22mm]{geometry}
+% بسته‌‌ای برای ظاهر شدن شکل‌ها و تصاویر متن
+\usepackage{graphicx,xcolor}
+% بسته‌ای برای رسم کادر
+\usepackage{framed} 
+% بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
+\usepackage{lastpage}
+% بسته‌ و دستوراتی برای ایجاد لینک‌های رنگی با امکان جهش
+\usepackage[linktocpage=true,colorlinks,citecolor=blue,linkcolor=blue]{hyperref}
+% چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، 
+% لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
+%\usepackage[pagebackref=false]{hyperref}
+% بسته‌ لازم برای تنظیم سربرگ‌ها
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{alltt}
+\usepackage{zref-perpage}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subfigure}
+\usepackage{natbib}
+%\usepackage{bibunits}
+\usepackage{bibentry}
+\usepackage{titlesec}
+\usepackage[subfigure]{tocloft}
+
+% بسته هایی برای وارد کردن کدهای برنامه نویسی
+\usepackage{listings,verbatim}
+% بسته‌ای برای ظاهر شدن «مراجع» و «نمایه» در فهرست مطالب و حذف لیست اشکال و جداول از فهرست
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+% دستورات مربوط به ایجاد نمایه
+\usepackage{makeidx}
+\makeindex
+\usepackage[xindy,acronym,toc,nopostdot]{glossaries}%,style=altlist
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
+\usepackage{xepersian}
+\settextfont[Scale=1]{XB Zar}
+\setlatintextfont[Scale=1]{Times New Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+\setdigitfont[Scale=1]{XB Zar}%{Persian Modern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+\defpersianfont\titlefont[Scale=1]{XB Titre}
+%\defpersianfont\BZar[Scale=1.1]{B Zar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% دستوری برای حذف کلمه «چکیده»
+\renewcommand{\abstractname}{}
+% دستوری برای حذف کلمه «abstract»
+%\renewcommand{\latinabstract}{}
+% دستوری برای تغییر نام کلمه «اثبات» به «برهان»
+\renewcommand\proofname{\textbf{برهان}}
+% دستوری برای تغییر نام کلمه «کتاب‌نامه» به «مراجع»
+\renewcommand{\bibname}{فهرست منابع}
+% دستوری برای تعریف واژه‌نامه انگلیسی به فارسی
+\newcommand\persiangloss[2]{#1\dotfill\lr{#2}\\}
+% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی 
+\newcommand\englishgloss[2]{#2\dotfill\lr{#1}\\}
+% تعریف دستور جدید «\پ» برای خلاصه‌نویسی جهت نوشتن عبارت «پروژه/پایان‌نامه/رساله»
+\newcommand{\پ}{پروژه/پایان‌نامه/رساله }
+
+%\newcommand\BackSlash{\char`\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% دستوری برای مشخص کردن کاراکتر بین شماره فصل و بخش
+\SepMark{-}
+
+% تعریف و نحوه ظاهر شدن عنوان قضیه‌ها، تعریف‌ها، مثال‌ها و ...
+\theoremstyle{definition}
+\newtheorem{definition}{تعریف}[section]
+\theoremstyle{theorem}
+\newtheorem{theorem}[definition]{قضیه}
+\newtheorem{lemma}[definition]{لم}
+\newtheorem{proposition}[definition]{گزاره}
+\newtheorem{corollary}[definition]{نتیجه}
+\newtheorem{remark}[definition]{ملاحظه}
+\theoremstyle{definition}
+\newtheorem{example}[definition]{مثال}
+
+%\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+%\def\bibname{فهرست منابع}
+\numberwithin{algorithm}{chapter}
+\def\listalgorithmname{فهرست الگوریتم‌ها}
+\def\listfigurename{فهرست شکل‌ها}
+\def\listtablename{فهرست جدول‌ها}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% دستورهایی برای سفارشی کردن سربرگ صفحات
+\csname@twosidetrue\endcsname
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[RE,LO]{\thepage}
+\fancyhead[LE]{\small\leftmark}
+% اگر میخواهید در صفحه‌های زوج به جای عنوان فصل، عنوان بخش را داشته باشید به جای leftmark از rightmark استفاده کنید.
+\fancyhead[RO]{\small\leftmark}
+\renewcommand{\chaptermark}[1]{%
+\markboth{
+فصل
+\tartibi{chapter}~:~#1}{}
+} % \thechapter
+
+\doublespacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% دستوراتی برای اضافه کردن کلمه «فصل» در فهرست مطالب
+
+\newlength\mylenprt
+\newlength\mylenchp
+\newlength\mylenapp
+
+\renewcommand\cftpartpresnum{\partname~}
+\renewcommand\cftchappresnum{\chaptername~}
+\renewcommand\cftchapaftersnum{:}
+
+\settowidth\mylenprt{\cftpartfont\cftpartpresnum\cftpartaftersnum}
+\settowidth\mylenchp{\cftchapfont\cftchappresnum\cftchapaftersnum}
+\settowidth\mylenapp{\cftchapfont\appendixname~\cftchapaftersnum}
+\addtolength\mylenprt{\cftpartnumwidth}
+\addtolength\mylenchp{\cftchapnumwidth}
+\addtolength\mylenapp{\cftchapnumwidth}
+
+\setlength\cftpartnumwidth{\mylenprt}
+\setlength\cftchapnumwidth{\mylenchp}	
+
+\makeatletter
+{\def\thebibliography#1{\chapter*{\refname\@mkboth
+   {\uppercase{\refname}}{\uppercase{\refname}}}\list
+   {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}
+   \rightmargin\labelwidth
+   \advance\rightmargin\labelsep
+   \advance\rightmargin\bibindent
+   \itemindent -\bibindent
+   \listparindent \itemindent
+   \parsep \z@
+   \usecounter{enumi}}
+   \def\newblock{}
+   \sloppy
+   \sfcode`\.=1000\relax}}
+\makeatother
+
+
+% دستوری برای تعیین عمق شماره بخش ها. 4 یعنی 1.1.1.1
+\setcounter{secnumdepth}{4}
+% دستوری برای تعیین عمق شماره بخش ها در فهرست. 2 یعنی 1.1.1
+\setcounter{tocdepth}{2}
+
+% دستوری برای افزودن صفحه خالی قبل از شروع فصل ها (تا شماره صفحه شروع هر فصل فرد باشد)
+\makeatletter
+ \def\cleardoublepage{\clearpage\if@twoside% 
+ 	\ifodd\c@page\else
+ 	 \vspace*{\fill} 
+ 	 \hfill 
+ 	 \begin{center}
+ 	 	\begin{Large}
+ 	 			 	
+ 	 	\end{Large}
+  	\end{center} 
+  \vspace{\fill} 
+  \thispagestyle{empty} 
+  \newpage \if@twocolumn\hbox{}\newpage\fi\fi\fi 
+}
+ \makeatother
+ 
+% دستوری برای حذف شماره صفحه لیست اشکال، جداول و ...
+\makeatletter
+\newcommand{\emptypage}[1]{%
+%	\cleardoublepage
+	\begingroup
+	\let\ps@plain\ps@empty
+	\pagestyle{empty}
+	#1
+	\cleardoublepage}
+\makeatletter 
+% تبدیل <آ> به <الف> در شماره گذاری حرفی (شماره ضمیمه و ...)
+\makeatletter
+\bidi@patchcmd{\@harfi}{آ}{الف}
+{\typeout{Succeeded in changing `آ` into `الف`}}
+{\typeout{Failed in changing `آ` into `الف`}}
+\makeatother
+
+% فارسی کردن شماره پاورقی های انگلیسی
+\makeatletter
+\def\LTRfootnote{\@ifnextchar[\@xLTRfootnote{\stepcounter\@mpfn
+		\protected@xdef\@thefnmark{\persianfont\thempfn}%
+		\@footnotemark\@LTRfootnotetext}}
+\makeatother
+% دستوراتی برای خارج کردن از بالانویس و اضافه کردن خط تیره به شماره پاورقی
+%\makeatletter
+%\long\def\@makefntext#1{\parindent 1em
+%	\noindent\hbox to 2em{}%
+%	\llap{\@thefnmark }-\,\,#1}
+%\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%برای پاورقی شدن کلمات
+\defglsentryfmt[english]{\glsgenentryfmt\ifglsused{\glslabel}{}{\LTRfootnote{\glsentryname{\glslabel}}}}
+\defglsentryfmt[acronym]{\glsentryname{\glslabel}\ifglsused{\glslabel}{}{\LTRfootnote{\glsentrydesc{\glslabel}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%تعریف استایل دلخواه    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newglossarystyle{mylistFa}{
+	\glossarystyle{list}
+	\renewenvironment{theglossary}{}{}
+	\renewcommand*{\glossaryheader}{}
+	\renewcommand*{\glsgroupheading}[1]{\section*{\glsgetgrouptitle{##1}}}
+	\renewcommand*{\glsgroupskip}{}
+	\renewcommand*{\glossaryentryfield}[5]     {\noindent\glstarget{##1}{##2}\dotfill \space ##3 \\}
+	\renewcommand*{\glossarysubentryfield}[6]{\glossaryentryfield{##2}{##3}{##4}{##5}{##6}}
+}
+
+\newglossarystyle{mylistEn}{
+	\glossarystyle{list}
+	\renewenvironment{theglossary}{}{}
+	\renewcommand*{\glossaryheader}{}
+	\renewcommand*{\glsgroupheading}[1]{\begin{LTR} \section*{\lr{\glsgetgrouptitle{##1}}} \end{LTR}}
+	\renewcommand*{\glsgroupskip}{}
+	\renewcommand*{\glossaryentryfield}[5]     {\noindent\glstarget{##1}{##3}\dotfill \space ##2 \\}
+	\renewcommand*{\glossarysubentryfield}[6]{\glossaryentryfield{##2}{##3}{##4}{##5}{##6}}
+}
+
+\newglossary[glg]{english}{gls}{glo}{واژه‌نامه انگلیسی به فارسی}
+\newglossary[blg]{persian}{bls}{blo}{واژه‌نامه فارسی به انگلیسی}
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%تعریف فرمت واژگان    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%با این دستور واژه مورد نظر، در متن، در پاورقی و هر دو واژه‌نامه  می‌آید.
+\newcommand{\inpdic}[2]{
+	\newglossaryentry{fa #1}{type=persian,name={#1}, sort={#1},description={\lr{#2}}}\gls{fa #1}\LTRfootnote{#2}\,\,
+	\newglossaryentry{en#1}{type=english,name={\lr{#2}}, sort={#2},description={#1}}\glsuseri{en#1}
+	\!\!\!\!}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% با این دستور واژه مورد نظر در متن و هر دو واژه‌نامه  می‌آید.
+\newcommand{\indic}[2]{
+	\newglossaryentry{fa-#1}{type=persian,name={#1}, sort={#1},description={\lr{#2}}}\gls{fa-#1}
+	\newglossaryentry{en-#1}{type=english,name={\lr{#2}}, sort={#2},description={#1}}\glsuseri{en-#1}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%
+% با این دستور واژه مورد نظر فقط در هر دو واژه‌نامه  می‌آید.
+\newcommand{\ingls}[2]{
+	\newglossaryentry{fa-#1}{type=persian,name={#1}, sort={#1},description={\lr{#2}}}\glsuseri{fa-#1}
+	\newglossaryentry{en-#1}{type=english,name={\lr{#2}}, sort={#2},description={#1}}\glsuseri{en-#1}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\allowdisplaybreaks
+\setlength{\headheight}{15pt}
+
+%=======================
+
+\lstset{  
+	basicstyle=\ttfamily, 
+	numbers=left,                   
+	numberstyle=\tiny\color{blue},  
+	stepnumber=1,                
+	numbersep=5pt,                
+	backgroundcolor=\color{gray!10},  
+	showspaces=false,              
+	showstringspaces=false,        
+	showtabs=false,                
+	rulecolor=\color{black},         
+	tabsize=2,                     
+	captionpos=b,                   
+	breaklines=true,                
+	breakatwhitespace=false,        
+	keywordstyle=\color{RoyalBlue},      
+	commentstyle=\color{gray},  
+	stringstyle=\color{red}%{ForestGreen}      
+} 
+
+% دستوراتی برای ترتیبی کردن شماره فصل ها در فهرست 
+
+\makeatletter
+\newcommand*{\@thechapapp}{\@tartibi\c@chapter}
+\bidi@appto\appendix{\gdef\@thechapapp{\@harfi\c@chapter}}
+
+\bidi@patchcmd{\Hy@org@chapter}{%
+	\addcontentsline{toc}{chapter}%
+	{\protect\numberline{\thechapter}#1}%
+}{%
+	\addcontentsline{toc}{chapter}%
+	{\protect\numberline{\@thechapapp}~#1}%
+}{\typeout{We succeded in redefining \string\@chapter}}
+{\typeout{We failed in redefining \string\@chapter}}
