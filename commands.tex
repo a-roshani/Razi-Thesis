@@ -242,6 +242,13 @@
 	\!\!\!\!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
+%با این دستور واژه مورد نظر، در پاورقی و هر دو واژه‌نامه  می‌آید.
+\newcommand{\infdic}[2]{
+	\newglossaryentry{fa-#1}{type=persian,name={#1},sort={#1},description={\lr{#2}}}\!\!\glsuseri{fa-#1}\LTRfootnote{#2}
+	\newglossaryentry{en-#1}{type=english,name={\lr{#2}}, sort={#2},description={#1}}\glsuseri{en-#1}
+	\!\!\!\!}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
 % با این دستور واژه مورد نظر در متن و هر دو واژه‌نامه  می‌آید.
 \newcommand{\indic}[2]{
 	\newglossaryentry{fa-#1}{type=persian,name={#1}, sort={#1},description={\lr{#2}}}\gls{fa-#1}
@@ -250,8 +257,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 % با این دستور واژه مورد نظر فقط در هر دو واژه‌نامه  می‌آید.
 \newcommand{\ingls}[2]{
-	\newglossaryentry{fa-#1}{type=persian,name={#1}, sort={#1},description={\lr{#2}}}\glsuseri{fa-#1}
-	\newglossaryentry{en-#1}{type=english,name={\lr{#2}}, sort={#2},description={#1}}\glsuseri{en-#1}
+	\newglossaryentry{fa-#1}{type=persian,name={#1},sort={#1},description={\lr{#2}}}\glsuseri{fa-#1}\!\!\!\!\!
+	\newglossaryentry{en-#1}{type=english,name={\lr{#2}},sort={#2},description={#1}}\glsuseri{en-#1}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
