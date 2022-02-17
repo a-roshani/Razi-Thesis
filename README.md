@@ -1,5 +1,4 @@
-# Razi-Thesis; A LateX Thesis template for Razi University, Kermanshah, Iran. 
-# قالب LateX پایان‌نامه برای دانشگاه رازی 
+# Razi-Thesis; A LateX Thesis template for Razi University, Kermanshah, Iran.  
 ver 0.1
 _____________________
 
@@ -8,11 +7,13 @@ The template has been written for students of [Razi University](https://razi.ac.
 Current version release date: 2022/02/05
 
 The style assumes that the user has the following fonts installed on their system:
--[XB Zar](http://dl.irmug.com/dl.php?id=21)
--[XB Titre](http://dl.irmug.com/dl.php?id=13)
+
+- [XB Zar](http://dl.irmug.com/dl.php?id=21)
+- [XB Titre](http://dl.irmug.com/dl.php?id=13)
+
 The final file must be compiled with XeLaTeX. 
 _____________________
-
+# قالب LateX پایان‌نامه برای دانشگاه رازی
 حروف‌چینی پروژه کارشناسی، پایان‌نامه کارشناسی‌ارشد یا رساله دکتری یکی از موارد پرکاربرد استفاده از زی‌پرشین است. 
 زی‌پرشین بسته‌ای است که به همت آقای وفا خلیقی آماده شده است و امکان حروف‌چینی فارسی در LaTeX را  برای فارسی‌زبانان فراهم کرده است.
 از جمله مزایای LaTeX آن است که در صورت وجود یک کلاس آماده برای حروف‌چینی یک سند خاص مانند یک پایان‌نامه، کاربر بدون درگیری با جزییات حروف‌چینی و صفحه‌آرایی می‌تواند سند خود را آماده نماید.
