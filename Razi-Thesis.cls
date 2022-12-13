@@ -487,7 +487,7 @@
 \vskip 20mm
 {\bfseries\latinby}\par
 {\bfseries %\supervisorfont
-\rm\@latinname \; \@latinsurname}\par
+\large\@latinname \; \@latinsurname}\par
 
 \vskip 20mm
 
