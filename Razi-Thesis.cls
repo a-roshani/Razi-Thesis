@@ -374,7 +374,7 @@
 \newcommand\prefacePage{\newpage
 	\thispagestyle{empty}
 	\vskip 15mm
-	{\noindent\Large\bfseries پیش‌گفتار}
+	{\noindent\Large\bfseries پیشگفتار}
 	\vspace{10mm}
 	\par
 	\noindent
