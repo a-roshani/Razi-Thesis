@@ -372,7 +372,7 @@
 }
 
 \newcommand\prefacePage{\newpage
-	\thispagestyle{plain}
+	\thispagestyle{empty}
 	\vskip 15mm
 	{\noindent\Large\bfseries پیش‌گفتار}
 	\vspace{10mm}
