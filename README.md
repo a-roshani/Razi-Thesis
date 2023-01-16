@@ -27,7 +27,7 @@ Razi-Thesis
 _____________________
 
 Amin Roshani
-roshani.amin@gmail.com
+(roshani.amin@gmail.com)
 
 Copyright © 2021-2023
 It may be distributed and/or modified under the LaTeX Project Public License,
