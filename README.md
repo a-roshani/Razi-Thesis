@@ -29,7 +29,7 @@ _____________________
 Amin Roshani
 roshani.amin@gmail.com
 
-Copyright © 2021-2022
+Copyright © 2021-2023
 It may be distributed and/or modified under the LaTeX Project Public License,
 version 1.3c or higher (your choice). The latest version of
 this license is accessible at: http://www.latex-project.org/lppl.txt
